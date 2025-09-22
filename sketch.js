@@ -1,6 +1,7 @@
 //my game is inspired by asteroids with a twist
 // your goal is to eat the asteroids instead of shooting them
 // asteroid concept has been changed to cheese wheels but original variable names remain. asteroids = cheese wheels
+// spaceship is now a hungry mouse
 
 let rez = 20;
 let asteroids = [];
@@ -46,7 +47,7 @@ function draw() {
 //instructions
   fill(100);
   textSize(30);
-  text("Move around using the mouse to eat the cheese wheels!", 40, 950);
+  text("Move around using the mouse to eat the runaway cheese wheels!", 40, 950);
   text("Press R to Start/ Restart", 40, 980);
 
  //player / mouse
@@ -66,7 +67,7 @@ function draw() {
  pop();
 
 
-// actual asteroids
+// actual cheese wheels
 for (let i = 0; i < asteroids.length; i++) {
     let asteroid = asteroids[i];
 push();
@@ -76,14 +77,14 @@ fill(245, 195, 66);
 ellipse (asteroid.x, asteroid.y, asteroid.size, asteroid.size);
  asteroid.x += asteroid.vel_x;
  asteroid.y += asteroid.vel_y;
- //collision detection for asteroids not to go off screen
+ //collision detection for cheese wheels not to go off screen
  if (asteroid.x < 0 || asteroid.x > width || asteroid.y < 0 || asteroid.y > height) {
      asteroid.vel_x *= -1;
      asteroid.vel_y *= -1;
  }
 pop();
 
-//collision detection for spaceship and asteroids (to give points)
+//collision detection for mouse and cheese wheels (to give points)
 let d1 = dist(sx1, sy1, asteroid.x, asteroid.y);
 let d2 = dist(sx2, sy2, asteroid.x, asteroid.y);
 let d3 = dist(sx3, sy3, asteroid.x, asteroid.y);
@@ -94,7 +95,7 @@ if (d1 < asteroid.size / 2 || d2 < asteroid.size /2 || d3 < asteroid.size /2) {
 }
 }
 
-//score goes up 1 when player eats an asteroid
+//score goes up 1 when player eats a cheese wheel
 function asteroidEat() {
     score = score + 1;
 
