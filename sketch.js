@@ -14,7 +14,7 @@ function setup() {
   
 }
 
-// reset game function that resets score and asteroids
+// reset game function that resets score and cheese wheels
     function resetGame() {
         score = 0;  
         asteroids = [];  
