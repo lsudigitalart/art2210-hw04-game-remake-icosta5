@@ -77,6 +77,7 @@ fill(245, 195, 66);
 ellipse (asteroid.x, asteroid.y, asteroid.size, asteroid.size);
  asteroid.x += asteroid.vel_x;
  asteroid.y += asteroid.vel_y;
+ 
  //collision detection for cheese wheels not to go off screen
  if (asteroid.x < 0 || asteroid.x > width || asteroid.y < 0 || asteroid.y > height) {
      asteroid.vel_x *= -1;
